@@ -1,0 +1,25 @@
+{
+  "name": "@adarshnpm/proxymate",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A CLI tool to manage proxy settings for npm, Git, and system environment on Windows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["proxy", "npm", "git", "cli", "iiita", "proxymate"],
+  "author": "adarshnpm",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "fs-extra": "^11.3.0"
+  },
+  "bin": {
+    "proxymate": "./bin/proxytool.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adarshgithub/proxymate.git"
+  }
+}
