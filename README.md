@@ -162,9 +162,7 @@ Want to make Proxymate better?
 
 ---
 
-## 👤 Author
 
-Built with ❤️ by **Adarsh Kumar**
 
 - GitHub: [@adarshgithub](https://github.com/adarshgithub)
 
