@@ -164,7 +164,7 @@ Want to make Proxymate better?
 
 
 
-- GitHub: [@adarshgithub](https://github.com/adarshgithub)
+- GitHub: [@adarshgithub](https://github.com/Adarshkumaro04)
 
 ---
 
