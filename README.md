@@ -1,142 +1,175 @@
-🚀 Proxymate
-Proxymate is a lightweight and handy CLI tool designed to simplify managing proxy settings for npm, Git, and Windows environment variables using PowerShell. It's especially useful for students and professionals working behind institutional or enterprise proxies.
+# 🚀 Proxymate
 
-✨ Features
-✅ Set Proxy – Easily configure HTTP & HTTPS proxy for npm, Git, and system environment.
+**Proxymate** is a lightweight and handy CLI tool designed to simplify managing proxy settings for **npm**, **Git**, and **Windows environment variables** using PowerShell. It's especially useful for students and professionals working behind institutional or enterprise proxies.
 
-❌ Unset Proxy – Cleanly remove all proxy settings in one command.
+---
 
-📊 Status Check – View the current proxy settings for your system and developer tools.
+## ✨ Features
 
-🏫 IIIT Allahabad Mode – Auto-configures proxy settings for IIIT-A campus with one command.
+- ✅ **Set Proxy** – Easily configure HTTP & HTTPS proxy for npm, Git, and system environment.
+- ❌ **Unset Proxy** – Cleanly remove all proxy settings in one command.
+- 📊 **Status Check** – View the current proxy settings for your system and developer tools.
+- 🏫 **IIIT Allahabad Mode** – Auto-configures proxy settings for IIIT-A campus with one command.
 
-📦 Installation
-Install Proxymate globally using npm:
+---
 
-bash
-Copy
-Edit
+## 📦 Installation
+
+Install **Proxymate** globally using npm:
+
+```bash
 npm install -g @adarshnpm/proxymate
-⚙️ Usage
-➕ Set Proxy
+```
+
+---
+
+## ⚙️ Usage
+
+### ➕ Set Proxy
+
 To configure custom proxy settings:
 
-bash
-Copy
-Edit
+```bash
 proxymate set --http http://<your-proxy>:<port>
+```
+
 This will:
 
-Set proxy for npm and Git
+- Set proxy for **npm** and **Git**
+- Generate `.proxyenv.ps1` script for setting system proxy
+- Provide instructions to run the script
 
-Generate .proxyenv.ps1 script for setting system proxy
+---
 
-Provide instructions to run the script
+### 🏫 IIIT Allahabad Users
 
-🏫 IIIT Allahabad Users
 If you're on the IIIT-A campus network, simply run:
 
-bash
-Copy
-Edit
+```bash
 proxymate set
+```
+
 This will auto-set:
 
-cpp
-Copy
-Edit
+```
 http://172.31.2.4:8080
-Note: You may still need to log in via browser to activate the proxy.
+```
 
-➖ Unset Proxy
+> Note: You may still need to log in via browser to activate the proxy.
+
+---
+
+### ➖ Unset Proxy
+
 To remove all proxy settings:
 
-bash
-Copy
-Edit
+```bash
 proxymate unset
+```
+
 This command will:
 
-Remove proxy from npm and Git
+- Remove proxy from **npm** and **Git**
+- Delete the `.proxyenv.ps1` file
 
-Delete the .proxyenv.ps1 file
+---
 
-🔍 Check Proxy Status
+### 🔍 Check Proxy Status
+
 To view current settings:
 
-bash
-Copy
-Edit
+```bash
 proxymate status
+```
+
 It will show:
 
-npm proxy config
+- npm proxy config
+- Git proxy config
+- Environment variable status
 
-Git proxy config
+---
 
-Environment variable status
+## ⚠️ Prerequisites
 
-⚠️ Prerequisites
 To apply system proxy via PowerShell, you must allow script execution:
 
-Check Current Execution Policy:
-powershell
-Copy
-Edit
-Get-ExecutionPolicy
-If Restricted, Update It:
-Run in Admin PowerShell:
+### Check Current Execution Policy:
 
-powershell
-Copy
-Edit
+```powershell
+Get-ExecutionPolicy
+```
+
+### If Restricted, Update It:
+
+Run in **Admin PowerShell**:
+
+```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 Then apply the proxy script:
 
-powershell
-Copy
-Edit
+```powershell
 . $env:USERPROFILE\proxyenv.ps1
-🛠️ Troubleshooting
-❓ npm proxy not set?
-If npm config get proxy returns null, manually set it:
+```
 
-bash
-Copy
-Edit
+---
+
+## 🛠️ Troubleshooting
+
+#### ❓ npm proxy not set?
+
+If `npm config get proxy` returns `null`, manually set it:
+
+```bash
 npm config set proxy http://<your-proxy>:<port>
 npm config set https-proxy http://<your-proxy>:<port>
+```
+
 Then verify with:
 
-bash
-Copy
-Edit
+```bash
 cat ~/.npmrc
-🤝 Contributing
+```
+
+---
+
+## 🤝 Contributing
+
 Want to make Proxymate better?
 
-Fork the repo
+1. Fork the repo
+2. Create your feature branch:
 
-Create your feature branch:
+    ```bash
+    git checkout -b feature-name
+    ```
 
-bash
-Copy
-Edit
-git checkout -b feature-name
-Commit your changes:
+3. Commit your changes:
 
-bash
-Copy
-Edit
-git commit -am "Add new feature"
-Push to the branch:
+    ```bash
+    git commit -am "Add new feature"
+    ```
 
-bash
-Copy
-Edit
-git push origin feature-name
-Open a Pull Request
+4. Push to the branch:
 
+    ```bash
+    git push origin feature-name
+    ```
 
-📄 License
-This project is licensed under the ISC License.
+5. Open a **Pull Request**
+
+---
+
+## 👤 Author
+
+Built with ❤️ by **Adarsh Kumar**
+
+- GitHub: [@adarshgithub](https://github.com/adarshgithub)
+
+---
+
+## 📄 License
+
+This project is licensed under the **ISC License**.
