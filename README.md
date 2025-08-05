@@ -1,24 +1,17 @@
-Proxymate
+🚀 Proxymate
+Proxymate is a lightweight and handy CLI tool designed to simplify managing proxy settings for npm, Git, and Windows environment variables using PowerShell. It's especially useful for students and professionals working behind institutional or enterprise proxies.
 
+✨ Features
+✅ Set Proxy – Easily configure HTTP & HTTPS proxy for npm, Git, and system environment.
 
-Proxymate is a lightweight command-line tool designed to simplify the management of proxy settings for npm, Git, and system environment variables on Windows using PowerShell. It helps developers easily configure and remove proxy settings with simple commands, especially useful for students and professionals working behind a proxy.
+❌ Unset Proxy – Cleanly remove all proxy settings in one command.
 
+📊 Status Check – View the current proxy settings for your system and developer tools.
 
-✨ Features:-
+🏫 IIIT Allahabad Mode – Auto-configures proxy settings for IIIT-A campus with one command.
 
-✅ Set Proxy: Configure HTTP & HTTPS proxy for npm, Git, and environment variables.
-
-❌ Unset Proxy: Cleanly remove all proxy configurations in one command.
-
-📊 Status Check: View the current proxy settings of your system and developer tools.
-
-🏫 IIIT Allahabad Mode: Built-in default proxy config for IIIT-A campus network.
-
-
-
-📦 Installation:-
-
-Install proxymate globally via npm:
+📦 Installation
+Install Proxymate globally using npm:
 
 bash
 Copy
@@ -26,93 +19,101 @@ Edit
 npm install -g @adarshnpm/proxymate
 ⚙️ Usage
 ➕ Set Proxy
-To configure proxy settings:
+To configure custom proxy settings:
 
 bash
 Copy
 Edit
 proxymate set --http http://<your-proxy>:<port>
-This command will:
+This will:
 
-Set the proxy for npm and Git
+Set proxy for npm and Git
 
-Generate a .proxyenv.ps1 script to configure system environment proxy
+Generate .proxyenv.ps1 script for setting system proxy
 
 Provide instructions to run the script
 
 🏫 IIIT Allahabad Users
-If you're a student of IIIT Allahabad, just run:
+If you're on the IIIT-A campus network, simply run:
 
 bash
 Copy
 Edit
 proxymate set
-It will auto-configure http://172.31.2.4:8080 as your proxy for all tools.
+This will auto-set:
 
-You’ll still need to log in through the proxy using your browser once.
+cpp
+Copy
+Edit
+http://172.31.2.4:8080
+Note: You may still need to log in via browser to activate the proxy.
 
 ➖ Unset Proxy
-To remove all proxy configurations:
+To remove all proxy settings:
 
 bash
 Copy
 Edit
 proxymate unset
-Removes proxy from npm and Git
+This command will:
 
-Deletes the .proxyenv.ps1 script
+Remove proxy from npm and Git
+
+Delete the .proxyenv.ps1 file
 
 🔍 Check Proxy Status
-To see current settings:
+To view current settings:
 
 bash
 Copy
 Edit
 proxymate status
-This shows:
+It will show:
 
 npm proxy config
 
 Git proxy config
 
-Environment variables
+Environment variable status
 
 ⚠️ Prerequisites
-PowerShell must allow script execution to run .proxyenv.ps1.
+To apply system proxy via PowerShell, you must allow script execution:
 
-Update Execution Policy:
-Check current policy:
-
+Check Current Execution Policy:
 powershell
 Copy
 Edit
 Get-ExecutionPolicy
-Change policy if restricted:
+If Restricted, Update It:
 Run in Admin PowerShell:
 
 powershell
 Copy
 Edit
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-Apply script:
+Then apply the proxy script:
 
 powershell
 Copy
 Edit
 . $env:USERPROFILE\proxyenv.ps1
 🛠️ Troubleshooting
-npm proxy config is missing?
-If npm config get proxy returns null:
+❓ npm proxy not set?
+If npm config get proxy returns null, manually set it:
 
 bash
 Copy
 Edit
 npm config set proxy http://<your-proxy>:<port>
 npm config set https-proxy http://<your-proxy>:<port>
-Check your ~/.npmrc file to verify.
+Then verify with:
 
+bash
+Copy
+Edit
+cat ~/.npmrc
 🤝 Contributing
-Want to improve proxymate?
+Want to make Proxymate better?
 
 Fork the repo
 
@@ -127,12 +128,15 @@ Commit your changes:
 bash
 Copy
 Edit
-git commit -am 'Add new feature'
-Push and open a Pull Request
+git commit -am "Add new feature"
+Push to the branch:
 
-👤 Author
-Built with ❤️ by Adarsh Kumar
-GitHub: @adarshgithub
+bash
+Copy
+Edit
+git push origin feature-name
+Open a Pull Request
+
 
 📄 License
-This project is licensed under the ISC License
+This project is licensed under the ISC License.
